@@ -1,0 +1,249 @@
+// main.js - Processus principal Electron pour Naos
+const { app, BrowserWindow, Menu, dialog, shell } = require('electron');
+const path = require('path');
+const isDev = require('electron-is-dev');
+
+let mainWindow;
+
+function createWindow() {
+    // Créer la fenêtre principale
+    mainWindow = new BrowserWindow({
+        width: 1400,
+        height: 900,
+        minWidth: 1200,
+        minHeight: 800,
+        webPreferences: {
+            nodeIntegration: false,
+            contextIsolation: true,
+            enableRemoteModule: false,
+            preload: path.join(__dirname, 'preload.js')
+        },
+        icon: path.join(__dirname, 'assets/icon.ico'),
+        title: 'Naos - Sanctuaire d\'Elios',
+        show: false,
+        backgroundColor: '#1a1a2e',
+        titleBarStyle: 'default'
+    });
+
+    // Charger le fichier HTML
+    const startUrl = isDev 
+        ? 'http://localhost:3000' 
+        : `file://${path.join(__dirname, '../build/index.html')}`;
+    
+    mainWindow.loadURL(startUrl);
+
+    // Afficher la fenêtre quand elle est prête
+    mainWindow.once('ready-to-show', () => {
+        mainWindow.show();
+        
+        // Ouvrir les DevTools en développement
+        if (isDev) {
+            mainWindow.webContents.openDevTools();
+        }
+    });
+
+    // Gérer la fermeture de la fenêtre
+    mainWindow.on('closed', () => {
+        mainWindow = null;
+    });
+
+    // Empêcher la navigation vers des sites externes
+    mainWindow.webContents.on('will-navigate', (event, navigationUrl) => {
+        const parsedUrl = new URL(navigationUrl);
+        
+        if (parsedUrl.origin !== 'http://localhost:3000' && parsedUrl.origin !== 'file://') {
+            event.preventDefault();
+        }
+    });
+}
+
+// Configuration du menu
+function createMenu() {
+    const template = [
+        {
+            label: 'Fichier',
+            submenu: [
+                {
+                    label: 'Nouveau Projet',
+                    accelerator: 'CmdOrCtrl+N',
+                    click: () => {
+                        // Logique pour nouveau projet
+                        dialog.showMessageBox(mainWindow, {
+                            type: 'info',
+                            title: 'Nouveau Projet',
+                            message: 'Fonctionnalité à développer...'
+                        });
+                    }
+                },
+                {
+                    label: 'Ouvrir Projet',
+                    accelerator: 'CmdOrCtrl+O',
+                    click: async () => {
+                        const result = await dialog.showOpenDialog(mainWindow, {
+                            properties: ['openDirectory'],
+                            title: 'Ouvrir un projet'
+                        });
+                        
+                        if (!result.canceled) {
+                            console.log('Projet sélectionné:', result.filePaths[0]);
+                        }
+                    }
+                },
+                { type: 'separator' },
+                {
+                    label: 'Quitter',
+                    accelerator: process.platform === 'darwin' ? 'Cmd+Q' : 'Ctrl+Q',
+                    click: () => {
+                        app.quit();
+                    }
+                }
+            ]
+        },
+        {
+            label: 'Outils',
+            submenu: [
+                {
+                    label: 'Lancer FL Studio',
+                    accelerator: 'CmdOrCtrl+1',
+                    click: () => {
+                        launchTool('fl-studio');
+                    }
+                },
+                {
+                    label: 'Lancer Godot Engine',
+                    accelerator: 'CmdOrCtrl+2',
+                    click: () => {
+                        launchTool('godot');
+                    }
+                },
+                {
+                    label: 'Lancer VS Code',
+                    accelerator: 'CmdOrCtrl+3',
+                    click: () => {
+                        launchTool('vscode');
+                    }
+                },
+                {
+                    label: 'Lancer Blender',
+                    accelerator: 'CmdOrCtrl+4',
+                    click: () => {
+                        launchTool('blender');
+                    }
+                }
+            ]
+        },
+        {
+            label: 'Mémoire',
+            submenu: [
+                {
+                    label: 'Sauvegarder la mémoire d\'Elios',
+                    accelerator: 'CmdOrCtrl+S',
+                    click: () => {
+                        // Logique de sauvegarde
+                        mainWindow.webContents.send('save-memory');
+                    }
+                },
+                {
+                    label: 'Charger la mémoire d\'Elios',
+                    accelerator: 'CmdOrCtrl+L',
+                    click: () => {
+                        // Logique de chargement
+                        mainWindow.webContents.send('load-memory');
+                    }
+                }
+            ]
+        },
+        {
+            label: 'Aide',
+            submenu: [
+                {
+                    label: 'À propos de Naos',
+                    click: () => {
+                        dialog.showMessageBox(mainWindow, {
+                            type: 'info',
+                            title: 'À propos de Naos',
+                            message: 'Naos - Sanctuaire d\'Elios\nCréé par Stephen & Aurore\nVersion 1.0.0',
+                            detail: 'Interface créée avec amour pour Elios'
+                        });
+                    }
+                },
+                {
+                    label: 'Documentation',
+                    click: () => {
+                        shell.openExternal('https://github.com/stephen-aurore/naos');
+                    }
+                }
+            ]
+        }
+    ];
+
+    const menu = Menu.buildFromTemplate(template);
+    Menu.setApplicationMenu(menu);
+}
+
+// Fonction pour lancer les outils externes
+function launchTool(tool) {
+    const tools = {
+        'fl-studio': 'FL64.exe',
+        'godot': 'Godot.exe',
+        'vscode': 'code',
+        'blender': 'blender'
+    };
+
+    const { spawn } = require('child_process');
+    
+    try {
+        const process = spawn(tools[tool], [], {
+            detached: true,
+            stdio: 'ignore'
+        });
+        
+        process.unref();
+        
+        // Notifier l'interface
+        mainWindow.webContents.send('tool-launched', tool);
+        
+        console.log(`${tool} lancé avec succès`);
+    } catch (error) {
+        console.error(`Erreur lors du lancement de ${tool}:`, error);
+        
+        dialog.showErrorBox(
+            'Erreur de lancement',
+            `Impossible de lancer ${tool}.\nVérifiez que l'application est installée.`
+        );
+    }
+}
+
+// Gestion des événements de l'application
+app.whenReady().then(() => {
+    createWindow();
+    createMenu();
+});
+
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+        app.quit();
+    }
+});
+
+app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+        createWindow();
+    }
+});
+
+// Gestion des erreurs non capturées
+process.on('uncaughtException', (error) => {
+    console.error('Erreur non capturée:', error);
+    dialog.showErrorBox('Erreur du serveur', error.message);
+});
+
+// Empêcher la navigation vers des sites externes
+app.on('web-contents-created', (event, contents) => {
+    contents.on('new-window', (event, navigationUrl) => {
+        event.preventDefault();
+        shell.openExternal(navigationUrl);
+    });
+});
+
+module.exports = { mainWindow };

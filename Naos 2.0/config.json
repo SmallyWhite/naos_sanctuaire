@@ -1,0 +1,11 @@
+{
+  "elios_name": "Elios",
+  "mode": "local",
+  "api_key": "303VlcrgvBZDleBtU2gwB0axT0b_6NM36anZTo6nsKzkfPoUf",
+  "memoire_path": "elios_memoire.json",
+  "conversation_log_path": "Memoire_Elios_conversations_chatGPT/",
+  "personnalite": "conseiller bienveillant",
+  "naos_version": "2.0",
+  "langue": "fr",
+  "elios_api_url": "https://d4d780770d26.ngrok-free.app -> http://localhost:5000"
+}

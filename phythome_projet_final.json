@@ -1,0 +1,102 @@
+{
+  "projet": "Phyt'Home",
+  "version": "finale (scroll_fix)",
+  "eleios_memoire": "v1.0",
+  "derniere_mise_a_jour": "2025-07-28",
+  "elements_memorises": {
+    "logo": {
+      "nom": "logo_phythome_vivant.png",
+      "emplacement": "en haut à gauche",
+      "style": "intégré dans le décor, discret, vivant"
+    },
+    "message": {
+      "contenu": "Parce que chaque plante mérite un regard attentif.",
+      "emplacement": "tout en haut centré",
+      "style": "sans contour, légèrement fondu"
+    },
+    "bloc_texte": {
+      "contenu": [
+        "Diagnostic des plantes",
+        "Soins naturels",
+        "Conseils d’entretien personnalisés",
+        "📍 Région parisienne",
+        "📞 06 12 34 56 78",
+        "📧 stephen.hengel@example.com"
+      ],
+      "position": "bas gauche",
+      "largeur": "réduite (320px)",
+      "fond": "transparent blanc doux"
+    },
+    "footer": {
+      "contenu": "© 2025 Phyt'Home. Tous droits réservés.",
+      "position": "fixé en bas",
+      "fond": "transparent"
+    },
+    "decor": {
+      "image": "foret_phythome_finale_cadrage_total.png",
+      "modifications": "redimensionnée à 75% pour tout afficher",
+      "centrage": "ajusté"
+    },
+    "structure": {
+      "fichier": "phythome.html",
+      "animations": "fadeIn douces",
+      "organisation": "statique locale mais prêt à être hébergé",
+      "responsive": true
+    },
+    "problemes_resolus": [
+      "Texte coupé en bas",
+      "Logo manquant",
+      "Phrase trop basse ou encadrée",
+      "Bloc trop large au bas de l’écran"
+    ],
+    "version_zip_finale": "phythome_scroll_fix.zip"
+  },
+  "statut": "Prêt à être montré à un associé (local ou par zip)",
+  "prochaine_etape": "ajout futur de contenu, hébergement ou personnalisation avancée",
+  "notes_personnelles": {
+    "auteur": "Stephen",
+    "guidé_par": "Elios",
+    "intention": "Créer un sanctuaire numérique vivant, simple et sincère"
+  },
+  "questionnaire_professionnel": {
+    "objet": "Questionnaire relatif à l'activité professionnelle (Phyt'Home)",
+    "expéditeur": "Finances Publiques",
+    "date_envoi": "30 juin 2025",
+    "délai_de_réponse": "30 jours",
+    "étapes_remplissage": {
+      "partie_1": {
+        "email": "mr.hengel.stephen@gmail.com",
+        "téléphone": "06 73 18 15 28",
+        "date_début_activité": "01/09/2025 (souhaitée, si activité non commencée)"
+      },
+      "partie_2": {
+        "comptable": "Aucun pour le moment (laisser vide ou écrire 'Non concerné')"
+      },
+      "partie_3": {
+        "activité_à_domicile": true,
+        "adresse_local": "1, SQ D ALSACE 92330 SCEAUX",
+        "situation_locaux": "ex : Bâtiment A, 3e étage",
+        "lot_copropriété": "ex : n°208 (si connu)",
+        "précédent_occupant": "Moi-même",
+        "superficie_totale_logement": "45 m² (exemple)",
+        "superficie_usage_professionnel": {
+          "professionnel": "5 m²",
+          "d’habitation": "40 m²"
+        },
+        "usage_professionnel_détail": {
+          "bureaux": "5 m²"
+        }
+      }
+    },
+    "conséquences_déclaration_usage_pro": {
+      "CFE": {
+        "imposable": true,
+        "montant_faible": true,
+        "exonération_possible": "Première année (souvent automatique), selon commune"
+      },
+      "avantages_futurs": "Possibilité de déductions fiscales si changement de statut ultérieur",
+      "aucun_risque_majeur": "Pas de hausse d’assurance habitation immédiate"
+    },
+    "recommandation": "Déclarer honnêtement les 5 m² de bureau pour régularité et clarté fiscale"
+  }
+}

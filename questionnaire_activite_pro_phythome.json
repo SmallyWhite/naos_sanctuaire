@@ -1,0 +1,41 @@
+{
+  "objet": "Questionnaire relatif à l'activité professionnelle (Phyt'Home)",
+  "expéditeur": "Finances Publiques",
+  "date_envoi": "30 juin 2025",
+  "délai_de_réponse": "30 jours",
+  "étapes_remplissage": {
+    "partie_1": {
+      "email": "mr.hengel.stephen@gmail.com",
+      "téléphone": "06 73 18 15 28",
+      "date_début_activité": "01/09/2025 (souhaitée, si activité non commencée)"
+    },
+    "partie_2": {
+      "comptable": "Aucun pour le moment (laisser vide ou écrire 'Non concerné')"
+    },
+    "partie_3": {
+      "activité_à_domicile": true,
+      "adresse_local": "1, SQ D ALSACE 92330 SCEAUX",
+      "situation_locaux": "ex : Bâtiment A, 3e étage",
+      "lot_copropriété": "ex : n°208 (si connu)",
+      "précédent_occupant": "Moi-même",
+      "superficie_totale_logement": "45 m² (exemple)",
+      "superficie_usage_professionnel": {
+        "professionnel": "5 m²",
+        "d’habitation": "40 m²"
+      },
+      "usage_professionnel_détail": {
+        "bureaux": "5 m²"
+      }
+    }
+  },
+  "conséquences_déclaration_usage_pro": {
+    "CFE": {
+      "imposable": true,
+      "montant_faible": true,
+      "exonération_possible": "Première année (souvent automatique), selon commune"
+    },
+    "avantages_futurs": "Possibilité de déductions fiscales si changement de statut ultérieur",
+    "aucun_risque_majeur": "Pas de hausse d’assurance habitation immédiate"
+  },
+  "recommandation": "Déclarer honnêtement les 5 m² de bureau pour régularité et clarté fiscale"
+}

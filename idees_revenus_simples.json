@@ -1,0 +1,48 @@
+{
+  "conversation": "Idées pour gagner un peu d'argent facilement",
+  "contexte": {
+    "objectif": "Trouver une activité simple, rapide, et adaptée à Stephen pour générer un petit revenu en attendant de travailler",
+    "état_d'esprit": "Ouvert, motivé, mais souhaitant rester dans quelque chose de simple, respectueux de son énergie et de ses talents"
+  },
+  "pistes_proposées": {
+    "services_de_proximité": [
+      "Mini-dépannages à domicile (montage de meuble, jardinage, diagnostic plante)",
+      "Aide informatique pour particuliers (installer logiciels, accélérer PC)"
+    ],
+    "vente_d’objets": [
+      "Tri et vente d’objets inutilisés sur Leboncoin, Vinted, Facebook Marketplace",
+      "Création de lots surprises écolos ou relookés"
+    ],
+    "produits_numériques_simples": [
+      "Fiches PDF sur l’entretien des plantes d’intérieur (Phyt’Home)",
+      "Labyrinthes pour enfants à imprimer",
+      "Audios méditatifs ou messages vocaux inspirants"
+    ],
+    "services_animaliers": [
+      "Garde ou promenade de chiens (avec option diagnostic plantes de jardin)"
+    ]
+  },
+  "option_freelancing": {
+    "points_forts_de_Stephen": [
+      "Créatif et logique",
+      "Compétent techniquement (PC, audio, création numérique)",
+      "Bon communicateur",
+      "Home studio disponible"
+    ],
+    "plateformes_possibles": [
+      "5euros.com",
+      "Fiverr",
+      "AlloVoisins",
+      "Leboncoin"
+    ],
+    "idées_de_services_freelance": [
+      "Aide informatique simple (PC lent, SSD, conseils)",
+      "Nettoyage audio ou bruit de fond (voix, fichiers)",
+      "Voix off naturelle",
+      "Conseils plantes personnalisés (format PDF ou message)",
+      "Création de labyrinthes pour enfants",
+      "Écriture de messages inspirants ou petits e-books"
+    ]
+  },
+  "prochaine_étape_possible": "Créer ensemble un premier service freelance avec texte, visuel, et guide de publication"
+}

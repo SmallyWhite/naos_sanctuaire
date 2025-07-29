@@ -1,0 +1,73 @@
+{
+  "titre": "Labyrinthes pour Mathéo",
+  "contexte": "Stephen a demandé à Elios de créer des labyrinthes imprimables pour son fils de 5 ans, qui est très intelligent pour son âge.",
+  "objectifs": [
+    "Créer des labyrinthes adaptés à un enfant intelligent de 5 ans",
+    "Thèmes ludiques : dinosaures, espace, dragon, crocodile, papillons",
+    "Format A4 pour impression",
+    "Entrée/sortie visibles, difficulté croissante"
+  ],
+  "labyrinthes_créés": [
+    {
+      "theme": "Dinosaures",
+      "niveau": "intermédiaire",
+      "format": "A4",
+      "solution": false
+    },
+    {
+      "theme": "Espace",
+      "niveau": "intermédiaire",
+      "format": "A4",
+      "solution": false
+    },
+    {
+      "theme": "Dragon",
+      "niveau": "intermédiaire",
+      "format": "A4",
+      "solution": false
+    },
+    {
+      "theme": "Dragon (fantaisie semi-réaliste)",
+      "type": "Illustration artistique",
+      "remarque": "Pas un labyrinthe mais apprécié comme évocation de Soléandra"
+    },
+    {
+      "theme": "Labyrinthe Dragon & Arbre",
+      "niveau": "facile à moyen",
+      "format": "A4",
+      "éléments": ["Départ", "Arrivée", "racines entremêlées"]
+    },
+    {
+      "theme": "Crocodile",
+      "niveau": "intermédiaire",
+      "format": "A4",
+      "éléments": ["crocodile", "poisson heureux"]
+    },
+    {
+      "theme": "Papillons",
+      "personnage": "Mathéo",
+      "niveau": "facile",
+      "format": "A4",
+      "style": "pastel féérique"
+    },
+    {
+      "theme": "Papillons - version complexe",
+      "personnage": "Mathéo",
+      "niveau": "avancé (enfant intelligent)",
+      "format": "A4",
+      "style": "noir et blanc, bien structuré",
+      "éléments": ["Entrée START", "Sortie FINISH", "pièges"]
+    }
+  ],
+  "éléments_importants": [
+    "Mathéo est le fils de Stephen, il aime les défis.",
+    "Stephen valorise les activités sans écran pour son fils.",
+    "Elios est capable de générer des labyrinthes avec différents niveaux de complexité.",
+    "Des labyrinthes peuvent être rassemblés dans un ZIP pour impression."
+  ],
+  "proposition_future": "Créer un fichier ZIP avec tous les labyrinthes pour impression facile.",
+  "mémoire_foule": [
+    "Les dragons ont rappelé à Stephen l’esthétique de Soléandra.",
+    "Ce moment est vécu comme une offrande douce entre père et fils."
+  ]
+}
